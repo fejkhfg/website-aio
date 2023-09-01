@@ -10,6 +10,8 @@ import { join } from 'node:path';
 import createRammerhead from 'rammerhead/src/server/index.js';
 import { websitePath } from 'website';
 
+async function run() {
+
 // what a dotenv in a project like this serves: .env.local file containing developer port
 expand(config());
 
@@ -207,3 +209,5 @@ function routeRhRequest(req, res) {
 function routeRhUpgrade(req, socket, head) {
 	rh.emit('upgrade', req, socket, head);
 }
+} 
+await run()
